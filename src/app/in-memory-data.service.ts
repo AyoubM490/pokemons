@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService, RequestInfo } from "angular-in-memory-web-api";
-import { Observable } from 'rxjs';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { POKEMONS } from './pokemon/mock-pokemon-list';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-
-  createDb()
-  {
-    return {POKEMONS};
+  createDb() {
+    const pokemons = POKEMONS;
+    return { pokemons };
   }
 }
